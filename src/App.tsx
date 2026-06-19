@@ -1,37 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Regulationfinal from "./sample-UI/Regulattion_View";
-import TechActivityLandscape from "./sample-UI/Tech-Activity-lanscape-view";
-import TrendIdentificationView from "./sample-UI/TrendIdentificationView";
-import ValueChainAnalysis from "./sample-UI/ValueChainAnalysis";
-import Feedback from "./sample-UI/Feedback";
+import Home from "./Home";
+import { sampleRoutes } from "./sampleRoutes";
 
-const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "");
+function getRouterBasename(): string {
+  const [repoSegment] = window.location.pathname.split("/").filter(Boolean);
+  if (window.location.hostname.endsWith("github.io") && repoSegment) {
+    return `/${repoSegment}`;
+  }
+  return "";
+}
 
 export default function App() {
   return (
-    <BrowserRouter basename={routerBasename}>
+    <BrowserRouter basename={getRouterBasename()}>
       <Routes>
-        <Route
-          path="/Regulation-view-final.html"
-          element={<Regulationfinal />}
-        />
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/Tech-Activity-landscape-view.html"
-          element={<TechActivityLandscape />}
-        />
-
-        <Route
-          path="/Trend-Identification-View.html"
-          element={<TrendIdentificationView />}
-        />
-
-        <Route
-          path="/Value-Chain-Analysis.html"
-          element={<ValueChainAnalysis />}
-        />
-        <Route path="/Feedback.html" element={<Feedback />} />
+        {sampleRoutes.map(({ path, Component }) => (
+          <Route key={path} path={path} element={<Component />} />
+        ))}
       </Routes>
     </BrowserRouter>
   );
