@@ -6,9 +6,11 @@ import TrendIdentificationView from "./sample-UI/TrendIdentificationView";
 import ValueChainAnalysis from "./sample-UI/ValueChainAnalysis";
 import Feedback from "./sample-UI/Feedback";
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <Routes>
         <Route
           path="/Regulation-view-final.html"

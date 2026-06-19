@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
   const buildVersion = Date.now(); // or use commit hash via child_process.execSync("git rev-parse --short HEAD")
 
   return {
+    base: process.env.GITHUB_ACTIONS ? "/CheszDesignTemplate/" : "/",
     server: {
       host: "::",
       port: 5006,

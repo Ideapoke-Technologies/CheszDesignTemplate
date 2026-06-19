@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5000"
+    "dev": "vite --port 5000",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@embedpdf/react-pdf-viewer": "^2.14.0",
