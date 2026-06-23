@@ -5,6 +5,7 @@ import TechActivityLandscape from "./sample-UI/Tech-Activity-lanscape-view";
 import TrendIdentificationView from "./sample-UI/TrendIdentificationView";
 import ValueChainAnalysis from "./sample-UI/ValueChainAnalysis";
 import Feedback from "./sample-UI/Feedback";
+import TrendIdentificationViewLatest from "./sample-UI/TrendIdentificationView_23rd_June";
 
 export type SampleRoute = {
   path: string;
@@ -14,6 +15,12 @@ export type SampleRoute = {
 };
 
 export const sampleRoutes: SampleRoute[] = [
+  {
+    path: "/Trend-Identification-Latest.html",
+    title: "Trend Identification",
+    description: "Updated : 23rd June - Version 05",
+    Component: TrendIdentificationViewLatest,
+  },
   {
     path: "/Regulation-view-final.html",
     title: "Regulation View",
