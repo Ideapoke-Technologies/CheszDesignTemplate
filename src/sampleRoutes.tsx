@@ -6,6 +6,7 @@ import TrendIdentificationView from "./sample-UI/TrendIdentificationView";
 import ValueChainAnalysis from "./sample-UI/ValueChainAnalysis";
 import Feedback from "./sample-UI/Feedback";
 import TrendIdentificationViewLatest from "./sample-UI/TrendIdentificationView_23rd_June";
+import RegulationDashboard_v9 from "./sample-UI/RegulationDashboard_v9";
 
 export type SampleRoute = {
   path: string;
@@ -15,6 +16,12 @@ export type SampleRoute = {
 };
 
 export const sampleRoutes: SampleRoute[] = [
+  {
+    path: "/Regulation-view-latest-final.html",
+    title: "Regulation and Standards",
+    description: "Updated : 24rd June - Version 09",
+    Component: RegulationDashboard_v9,
+  },
   {
     path: "/Trend-Identification-Latest.html",
     title: "Trend Identification",
